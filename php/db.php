@@ -2,7 +2,7 @@
 // Try first with the custom port 3307
 $host = "sql310.infinityfree.com";
 $user = "if0_39069649"; // Default username
-$password = "DlJnpN9nSR9h"; // Leave empty if no password is set
+$password = ""; // Leave empty if no password is set
 $database = "if0_39069649_flight_booking"; // Make sure this matches your imported database name
 
 // إنشاء الاتصال بقاعدة البيانات
