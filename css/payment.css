@@ -1,0 +1,227 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.payment-container {
+    background: #222;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    color: white;
+}
+
+h2, h3 {
+    color: #29D9D5;
+    margin-bottom: 15px;
+}
+
+.payment-info {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.payment-info p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.payment-info .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #29D9D5;
+}
+
+.payment-actions {
+    margin-top: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.confirm {
+    background-color: #29D9D5;
+    color: white;
+}
+
+.confirm:hover {
+    background-color: #1baaa9;
+}
+
+.cancel {
+    background-color: #d9534f;
+    color: white;
+    margin-top: 10px;
+}
+
+.cancel:hover {
+    background-color: #c9302c;
+}
+
+/* Payment methods styling */
+.payment-methods {
+    margin-bottom: 20px;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    background: #333;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33% - 10px);
+    min-width: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-option:hover {
+    border-color: #29D9D5;
+    transform: translateY(-3px);
+}
+
+.payment-option.selected {
+    border-color: #29D9D5;
+    background-color: rgba(41, 217, 213, 0.1);
+}
+
+.payment-option img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.payment-option i {
+    font-size: 40px;
+    color: #29D9D5;
+    margin-bottom: 10px;
+}
+
+.payment-option span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Payment form styling */
+.payment-form {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    margin-bottom: 20px;
+    text-align: left;
+    display: none;
+}
+
+.payment-form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #29D9D5;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: white;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    border-color: #29D9D5;
+    outline: none;
+}
+
+/* Validation styling */
+.form-group input.valid {
+    border-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+.form-group input.invalid {
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.required {
+    color: #dc3545;
+    margin-left: 3px;
+}
+
+/* Disabled button styling */
+.btn.confirm:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Back button styling */
+.navigation-buttons {
+    margin-top: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #29D9D5;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid #29D9D5;
+}
+
+.back-btn:hover {
+    background-color: rgba(41, 217, 213, 0.1);
+}

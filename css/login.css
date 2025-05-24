@@ -1,0 +1,164 @@
+:root{
+    --green:#27ae60;
+    --dark-color:#219150;
+    --black:#444;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --border-hover:.1rem solid var (var(--black));
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Poppins' , sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+    transition: width none;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--green);
+    font-size: 1.7rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--dark-color);
+}
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.heading::before{
+    content: '';
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: .1rem;
+    background: rgba(0,0,0,.1);
+    z-index: -1;
+}
+
+.heading span{
+    font-size: 3rem;
+    padding: .5rem 2rem;
+    color: var(--black);
+    background: #fff;
+    border: var(--border); 
+}
+section{
+    padding: 5rem 9%;
+}
+html{
+    font-size: 62.5%;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+.login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111111;
+    height: 100%; width: 100%;
+}
+.login-form-container form{
+    background: #222222;
+    border: var(--border);
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin: 2rem;
+}
+.login-form-container form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    color: #29D9D5;
+}
+.login-form-container form span{
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    font-size: 14px;
+    color: #f7f7f7;
+}
+.login-form-container form .box{
+    width: 100%;
+    height: 50px;
+    padding: .8rem .8rem;
+    border-radius: 5rem;
+    border: 0.2rem solid #29D9D5;
+    font-size: 1.2rem;
+    color: #aaa;
+    text-transform: none;
+    background: none;
+    margin-top: 2rem;
+}
+.login-form-container form .checkbox{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    padding: 1rem 0;
+}
+.login-form-container form .checkbox label{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+    color: #f7f7f7;
+}
+.login-form-container form .btn{
+    width: 50%;
+    margin: 1.5rem 0;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #29D9D5;
+    border: 0.2rem solid #29D9D5;
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+}
+.login-form-container form p{
+    padding-top: 0.8rem;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    color: #f7f7f7;
+}
+.login-form-container form p a{
+    color: var(--green);
+    text-decoration: underline;
+    color: #29D9D5;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 2rem;
+}

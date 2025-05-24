@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="payment-container">
+        <h2>Payment Details</h2>
+        <div class="payment-info">
+            <p><strong>Flight Number:</strong> <span id="flight-number"></span></p>
+            <p><strong>From:</strong> <span id="departure"></span></p>
+            <p><strong>To:</strong> <span id="destination"></span></p>
+            <p><strong>Departure Time:</strong> <span id="departure-time"></span></p>
+            <p class="price"><strong>Price:</strong> $<span id="price"></span></p>
+        </div>
+
+        <div class="payment-methods">
+            <h3>Select Payment Method</h3>
+            <div class="payment-options">
+                <div class="payment-option" data-method="vodafone">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Vodafone_icon.svg/1200px-Vodafone_icon.svg.png" alt="Vodafone Cash">
+                    <span>Vodafone Cash</span>
+                </div>
+                <div class="payment-option" data-method="instapay">
+                    <img src="https://instapay.eg/wp-content/uploads/2022/08/InstaPay-Logo-1.png" alt="InstaPay">
+                    <span>InstaPay</span>
+                </div>
+                <div class="payment-option" data-method="credit">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Credit Card</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-form" id="payment-form">
+            <!-- Form will be dynamically populated based on selected payment method -->
+        </div>
+
+        <div class="payment-actions">
+            <button id="confirm-payment" class="btn confirm" disabled>Confirm Payment</button>
+            <button id="cancel-payment" class="btn cancel">Cancel</button>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="booking.html" class="back-btn">Back to Booking</a>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111111;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Flight info section */
+.flight-info {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flight-info h2 {
+    color: #29D9D5;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Navigation buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #29D9D5;
+    border: 0.2rem solid #29D9D5;
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+.back-btn:hover {
+    background: #29D9D5;
+    color: #111;
+}
+
+/* Book and Pay button */
+.book-pay-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #29D9D5;
+    border: 0.2rem solid #29D9D5;
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+    margin-top: 2rem;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+.book-pay-btn i {
+    margin-right: 1rem;
+    font-size: 1.8rem;
+}
+
+.book-pay-btn:hover {
+    background: #29D9D5;
+    color: #111;
+}
+
+.book-pay-btn:active {
+    transform: scale(0.98);
+}
+
+.book-pay-btn:disabled {
+    background: #444;
+    color: #888;
+    border-color: #444;
+    cursor: not-allowed;
+}
+
+.book-pay-btn:disabled i {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Form styling */
+.main-form {
+    width: 90%;
+    max-width: 600px;
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.main-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-form h2 {
+    font-size: 24px;
+    color: #29D9D5;
+    margin-bottom: 15px;
+}
+
+/* ✅ تحسين تنسيق الحقول */
+.box {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #29D9D5;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* ✅ تحسين تنسيق زر الإرسال */
+.btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ✅ تحسين تنسيق عرض تفاصيل الرحلة */
+.flight-info {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(41, 217, 213, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(41, 217, 213, 0.5);
+    text-align: center;
+}
+
+.flight-info h2 {
+    color: #222;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.flight-info p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: white;
+}
+
+/* ✅ تحسين التناسق بين العناصر */
+.div-format,
+.div-format-two {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.div-format div,
+.div-format-two div {
+    width: 45%;
+}
+
+@media (max-width: 768px) {
+    .div-format div,
+    .div-format-two div {
+        width: 100%;
+    }
+}

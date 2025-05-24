@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Booking - Traveller</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .edit-booking-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .edit-booking-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .flight-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .flight-details h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .loading {
+            position: relative;
+            opacity: 0.7;
+        }
+        
+        .loading::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <?php include 'php/header.php'; ?>
+    
+    <div class="container">
+        <div class="edit-booking-container" id="edit-booking-form">
+            <h2>Edit Booking</h2>
+            <div id="loading-message">Loading booking information...</div>
+            <div id="booking-form" style="display: none;">
+                <div class="flight-details" id="flight-info">
+                    <!-- Flight information will be inserted here -->
+                </div>
+                
+                <form id="traveler-form">
+                    <h3>Traveler Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="tel" id="phone_number" name="phone_number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birth_date">Birth Date</label>
+                            <input type="date" id="birth_date" name="birth_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="gender-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="male" name="sex" value="Male" checked>
+                                    <label for="male">Male</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="female" name="sex" value="Female">
+                                    <label for="female">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Passport Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="passport_number">Passport Number</label>
+                            <input type="text" id="passport_number" name="passport_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" id="nationality" name="nationality" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="passport_expiration">Passport Expiration Date</label>
+                        <input type="date" id="passport_expiration" name="passport_expiration" required>
+                    </div>
+                    
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" id="cancel-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <?php include 'php/footer.php'; ?>
+    
+    <script src="js/config.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check if user is logged in
+            const userId = sessionStorage.getItem("userId");
+            if (!userId) {
+                alert("You must login first.");
+                window.location.href = "login.html";
+                return;
+            }
+            
+            // Get booking ID from session storage
+            const bookingId = sessionStorage.getItem("editBookingId");
+            const flightId = sessionStorage.getItem("editFlightId");
+            
+            if (!bookingId) {
+                alert("No booking selected for editing.");
+                window.location.href = "my_bookings.html";
+                return;
+            }
+            
+            const loadingMessage = document.getElementById("loading-message");
+            const bookingForm = document.getElementById("booking-form");
+            const flightInfo = document.getElementById("flight-info");
+            const form = document.getElementById("traveler-form");
+            
+            // Fetch booking details
+            fetch(API_ENDPOINTS.booking, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+                    booking_id: bookingId,
+                    action: "get_booking_details"
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success" && data.booking) {
+                    const booking = data.booking;
+                    
+                    // Display flight information
+                    flightInfo.innerHTML = `
+                        <h3>Flight Details</h3>
+                        <p><strong>Flight Number:</strong> <span>${booking.flight_number || 'N/A'}</span></p>
+                        <p><strong>Route:</strong> <span>${booking.departure || 'N/A'} ✈️ ${booking.destination || 'N/A'}</span></p>
+                        <p><strong>Departure Time:</strong> <span>${booking.departure_time || 'N/A'}</span></p>
+                        <p><strong>Price:</strong> <span>$${booking.price || '0'}</span></p>
+                    `;
+                    
+                    // Fill form with booking details
+                    document.getElementById("first_name").value = booking.first_name || '';
+                    document.getElementById("last_name").value = booking.last_name || '';
+                    document.getElementById("email").value = booking.email || '';
+                    document.getElementById("phone_number").value = booking.phone_number || '';
+                    document.getElementById("birth_date").value = booking.birth_date || '';
+                    
+                    // تعيين قيمة الجنس في أزرار الراديو
+                    if (booking.gender === 'Male') {
+                        document.getElementById("male").checked = true;
+                    } else if (booking.gender === 'Female') {
+                        document.getElementById("female").checked = true;
+                    }
+                    
+                    document.getElementById("passport_number").value = booking.passport_number || '';
+                    document.getElementById("nationality").value = booking.nationality || '';
+                    document.getElementById("passport_expiration").value = booking.passport_expiration || '';
+                    
+                    // Hide loading message and show form
+                    loadingMessage.style.display = "none";
+                    bookingForm.style.display = "block";
+                } else {
+                    alert("Error loading booking details: " + (data.message || "Unknown error"));
+                    window.location.href = "my_bookings.html";
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching booking details:", error);
+                alert("An error occurred while loading booking details. Please try again.");
+                window.location.href = "my_bookings.html";
+            });
+            
+            // Cancel button event
+            document.getElementById("cancel-btn").addEventListener("click", function() {
+                if (confirm("Are you sure you want to cancel? Any changes will be lost.")) {
+                    window.location.href = "my_bookings.html";
+                }
+            });
+            
+            // Form submission
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    booking_id: bookingId,
+                    user_id: userId,
+                    flight_id: flightId,
+                    first_name: document.getElementById("first_name").value,
+                    last_name: document.getElementById("last_name").value,
+                    email: document.getElementById("email").value,
+                    phone_number: document.getElementById("phone_number").value,
+                    birth_date: document.getElementById("birth_date").value,
+                    gender: document.querySelector('input[name="sex"]:checked') ? document.querySelector('input[name="sex"]:checked').value : "",
+                    passport_number: document.getElementById("passport_number").value,
+                    nationality: document.getElementById("nationality").value,
+                    passport_expiration: document.getElementById("passport_expiration").value,
+                    action: "update_booking"
+                };
+                
+                // Disable form and show loading state
+                const saveBtn = document.getElementById("save-btn");
+                const originalBtnText = saveBtn.innerHTML;
+                saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+                saveBtn.disabled = true;
+                form.classList.add('loading');
+                
+                // تسجيل البيانات المرسلة في وحدة التحكم للتشخيص
+                console.log("Sending data to update_booking.php:", formData);
+                
+                // Send update request
+                fetch(API_ENDPOINTS.updateBooking, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    console.log("Response status:", response.status);
+                    return response.text().then(text => {
+                        try {
+                            return JSON.parse(text);
+                        } catch (e) {
+                            console.error("Error parsing JSON:", e);
+                            console.log("Raw response:", text);
+                            throw new Error("Invalid JSON response");
+                        }
+                    });
+                })
+                .then(data => {
+                    console.log("Response data:", data);
+                    if (data.status === "success") {
+                        alert("Booking updated successfully!");
+                        window.location.href = "my_bookings.html";
+                    } else {
+                        alert(data.message || "Error updating booking. Please try again.");
+                        saveBtn.innerHTML = originalBtnText;
+                        saveBtn.disabled = false;
+                        form.classList.remove('loading');
+                    }
+                })
+                .catch(error => {
+                    console.error("Error updating booking:", error);
+                    alert("An error occurred while updating the booking. Please try again.");
+                    saveBtn.innerHTML = originalBtnText;
+                    saveBtn.disabled = false;
+                    form.classList.remove('loading');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

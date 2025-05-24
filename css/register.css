@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F8F8;
+  }
+  
+  h1 {
+    font-size: 2.1rem;
+    text-align: left;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    font-weight: bolder;
+  }
+  
+  form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 2rem auto;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 2rem;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="password"]:hover {
+    border-bottom: 2px solid #000;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    font-size: .9rem;
+  }
+  
+  
+  #agree {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  button[type="submit"] {
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  img {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+.signup-container {
+display: flex;
+width: 100%;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin: 50px auto;
+max-width: 800px;
+border: 1px solid #ccc;
+border-radius: 10px;
+background-color: #ffff;
+box-shadow: 2px 3px 20px 6px #cbcbcb;;
+}
+
+form {
+flex-grow: 1;
+margin-right: 50px;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 5px;
+}
+
+.input-group {
+position: relative;
+}
+
+.input-group i {
+position: absolute;
+top: 50%;
+left: 10px;
+transform: translateY(-50%);
+font-size: 14px;
+}
+
+.input-group input {
+width: 100%;
+padding: 10px 10px 10px 40px;
+border: none;
+border-bottom: 2px solid #ccc;
+outline: none;
+background-color: transparent;
+transition: border-bottom-color 0.3s ease;
+}
+
+.input-group input:hover, .input-group input:focus {
+border-bottom-color: #555;
+}
+
+.form-group input[type="checkbox"] {
+margin-right: 5px;
+}
+
+button[type="submit"] {
+display: block;
+margin-top: 20px;
+padding: 10px;
+background-color:#6EABE4 ;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 150px;
+height: 60px;
+}
+.image-container {
+flex-shrink: 0;
+text-align: center;
+}
+
+.image-container img {
+width: 100%;
+max-width: 300px;
+}
+.form-group input[type="checkbox"]{
+    height: 19px;
+    width: 30px;
+}
+.form-group span{
+    margin-bottom: 10px;
+    font-size: .9rem;
+    color: #535353;
+}
+.form-group .form-group-span{
+    border-bottom: 2px solid black;
+}
+.image-container a {
+display: block;
+margin-top: 80px;
+color: #535353;
+}
+
+.loader-container{
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  z-index: 10000;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-container.active{
+  display: none;
+}
+.loader-container img{
+  height: 23rem;
+  border-radius: 10rem;
+}
+
+
+/* Small devices (landscape phones, 375px and up) */
+@media (min-width: 375px) {
+  .image-container{
+    max-width: 100px;
+  }
+  form{
+    margin-right: 0;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .image-container{
+    max-width: 220px;
+  }
+  form{
+    margin-right: 20px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .image-container{
+    max-width: 280px;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {	
+	
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+	
+}
+
+@media (min-width: 1400px) {  
+
+}

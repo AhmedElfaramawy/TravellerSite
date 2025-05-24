@@ -1,0 +1,77 @@
+.flights-section {
+    text-align: center;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.selected-destination {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    margin: 10px auto 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.selected-destination p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.selected-destination span {
+    font-weight: bold;
+    color: #29D9D5;
+}
+
+.error-message, .no-flights-message {
+    background-color: #fff8f8;
+    border-left: 4px solid #ff6b6b;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.error-message p, .no-flights-message p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.error-message p:first-child, .no-flights-message p:first-child {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.flight-item {
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+}
+
+.flight-item h3 {
+    color: #29D9D5;
+}
+
+.flight-item p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.btn {
+    background-color: #29D9D5;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1baaa9;
+}
