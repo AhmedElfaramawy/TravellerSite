@@ -2,7 +2,7 @@
 // This file contains common configuration variables used across the site
 
 // Base URL for API calls - automatically detects the site root
-const BASE_URL = window.location.origin + '/Traveller-Site-main/';
+const BASE_URL = window.location.origin + '/TravellerSite/';
 
 // API endpoints
 const API_ENDPOINTS = {
